@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: temperature-converter
+  labels:
+    app: temp-conv
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: temp-conv
+    spec:
+      containers:
+        - name: temp-conv-img
+          image: ryanding/temp-convt:1
+          imagePullPolicy: Always
+          ports:
+          - name: temp-conv-port
+            containerPort: 7000

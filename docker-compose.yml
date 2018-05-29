@@ -1,0 +1,7 @@
+version: '2.1'
+
+services:
+  hello_world:
+    build: .
+    ports:
+      - "7000:7000"
